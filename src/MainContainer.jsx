@@ -1,16 +1,29 @@
 /** @format */
 
-import { OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { OrbitControls, useHelper } from "@react-three/drei";
 import AnimationStars from "./AnimationStars";
+import Earth from "./Earth";
+import { useRef } from "react";
+import * as THREE from "three";
 
 const MainContainer = () => {
+  const directionLightRef = useRef();
+  const directionLightRefTwo = useRef();
+  useHelper(directionLightRef, THREE.DirectionalLightHelper, 1, "hotpink");
+  useHelper(directionLightRefTwo, THREE.DirectionalLightHelper, 1, "hotpink");
   return (
-    <Canvas>
-      <color attach="background" args={["#111111"]} />
+    <>
+      <color attach="background" args={["#000000"]} />
       <OrbitControls />
       <AnimationStars />
-    </Canvas>
+      <directionalLight
+        ref={directionLightRef}
+        position={[0, 0, 10]}
+        intensity={1}
+      />
+      <directionalLight ref={directionLightRefTwo} position={[0, 0, -10]} />
+      <Earth />
+    </>
   );
 };
 
