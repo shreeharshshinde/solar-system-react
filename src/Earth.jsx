@@ -16,7 +16,7 @@ const Earth = ({ displacementScale }) => {
     ]);
 
   useFrame(() => {
-    earthRef.current.rotation.y += 0.001;
+    earthRef.current.rotation.y += 0.002;
   });
   return (
     <mesh ref={earthRef}>
@@ -25,6 +25,7 @@ const Earth = ({ displacementScale }) => {
         map={earthTexture}
         normalMap={earthNormalMap}
         specularMap={earthSpecularMap}
+        shininess={1000}
         displacementMap={earthDisplacementMap}
         displacementScale={displacementScale}
       />
