@@ -8,9 +8,8 @@ function App() {
   return (
     <Canvas
       shadows
-      camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 3, 3] }}
+      camera={{ fov: 45, near: 0.1, far: 4000, position: [-10, -1, 10] }}
     >
-      {/* <Perf /> */}
       <OrbitControls />
       <MainContainer />
     </Canvas>

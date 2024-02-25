@@ -2,7 +2,7 @@
 
 import { useHelper } from "@react-three/drei";
 import AnimationStars from "./AnimationStars";
-import Earth from "./Earth";
+import Earth from "./Scenes/Earth/Earth";
 import { useRef } from "react";
 import * as THREE from "three";
 
@@ -19,17 +19,8 @@ const MainContainer = () => {
         castShadow
         ref={directionLightRef}
         position={[0, 0, 10]}
-        intensity={1}
+        intensity={5}
       />
-      <directionalLight
-        castShadow
-        ref={directionLightRefTwo}
-        position={[0, 0, -10]}
-      />
-
-      {/* <ambientLight intensity={2} />  */}
-      {/* ambientLight is for whole shape light witout shadow */}
-
       <Earth displacementScale={0.15} />
     </>
   );

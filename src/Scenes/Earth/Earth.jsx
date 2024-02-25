@@ -1,9 +1,10 @@
 /** @format */
 
-import { useTexture } from "@react-three/drei";
+import { Text, useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import Moon from "./Moon";
+import ISS from "./ISS";
 
 const Earth = ({ displacementScale }) => {
   const earthRef = useRef();
@@ -32,6 +33,20 @@ const Earth = ({ displacementScale }) => {
           displacementScale={displacementScale}
         />
       </mesh>
+      <Text
+        position={[0, 4, -10]}
+        fontSize={2}
+        color="white"
+        maxWidth={10}
+        lineHeight={1}
+        letterSpacing={0.02}
+        textAlign="center"
+        anchorX="center"
+        anchorY="middle"
+      >
+        Github: rayanramazan
+      </Text>
+      <ISS />
       <Moon />
     </group>
   );
