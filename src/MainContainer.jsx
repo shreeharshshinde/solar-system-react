@@ -16,11 +16,13 @@ const MainContainer = () => {
       <color attach="background" args={["#000000"]} />
       <AnimationStars />
       <directionalLight
+        castShadow
         ref={directionLightRef}
         position={[0, 0, 10]}
         intensity={1}
       />
       <directionalLight
+        castShadow
         ref={directionLightRefTwo}
         position={[0, 0, -10]}
       />
@@ -28,7 +30,7 @@ const MainContainer = () => {
       {/* <ambientLight intensity={2} />  */}
       {/* ambientLight is for whole shape light witout shadow */}
 
-      <Earth displacementScale={0.15}/>
+      <Earth displacementScale={0.15} />
     </>
   );
 };
